@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            EmpMaxHrs.MaxHrs();
+            ComputeEmpWage.ComputeEmployeeWage();
+            Console.ReadLine();
         }
     }
 }
