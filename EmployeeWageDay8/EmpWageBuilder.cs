@@ -4,26 +4,24 @@
     {
         const int isFullTime = 1;
         const int isPartTime = 2;
-        public int numOfCompanies = 0;
-        public CompanyEmpWage[] companies;
+        List<CompanyEmpWage> list;
         //UC10-EmpWageArray-ManageWageForMultipleCompanies
         //UC9-Total Wage for each Company
         public EmpWageBuilder()
         {
-            companies = new CompanyEmpWage[3];
+            list = new List<CompanyEmpWage>();
         }
         void IEmpWage.AddCompanyEmpWage(string company, int empWagePerHr, int empWorkinDaysPerMonth, int empTotalWorkingHrs)
         {
             CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empWagePerHr, empWorkinDaysPerMonth, empTotalWorkingHrs);
-            companies[numOfCompanies] = companyEmpWage;
-            numOfCompanies++;
+            list.Add(companyEmpWage);
         }
         void IEmpWage.IterateOverCompanies()
         {
-            for (int i = 0; i < companies.Length; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                companies[i].SetTotalEmpWage(EmpWage(companies[i]));
-                Console.WriteLine(this.companies[i].ToString());
+                list[i].SetTotalEmpWage(EmpWage(list[i]));
+                Console.WriteLine(this.list[i].ToString());
             }
         }
         public int EmpWage(CompanyEmpWage companyEmpWage)
