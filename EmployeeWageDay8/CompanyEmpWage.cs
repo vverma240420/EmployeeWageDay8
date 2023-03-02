@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EmployeeWageDay8
+﻿namespace EmployeeWageDay8
 {
+    public interface IEmpWage
+    {
+        void AddCompanyEmpWage(string company, int empWagePerHr, int empWorkinDaysPerMonth, int empTotalWorkingHrs);
+        void IterateOverCompanies();
+    }
     internal class CompanyEmpWage
     {
         public string company;
